@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">Heartmesh Monitor</string>
+	<string name="hello_world">Hello world!</string>
+	<color name="white">#FFF</color>
+</resources>

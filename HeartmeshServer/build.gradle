@@ -1,0 +1,27 @@
+group 'com.zeebo'
+version '0.1'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Heartmesh Server',
+            'Implementation-Version': '1.0',
+            'Main-Class': 'com.zeebo.heartmesh.MeshNode'
+    }
+    baseName = project.name + '-release'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

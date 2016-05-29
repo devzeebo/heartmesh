@@ -1,0 +1,9 @@
+{
+	"port": 7185,
+	"remotes": [
+		{
+			"remoteIp": "127.0.0.1",
+			"remotePort": 7184
+		}
+	]
+}
